@@ -1,10 +1,3 @@
-This is an excellent roadmap. I've combined it with the previous notes, removed duplicates, added explanations, interview points, and arranged everything in the order you should learn as a beginner.
-
----
-
-# Spring Boot Testing Notes (Complete Beginner to Intermediate)
-
----
 
 # Spring Boot Testing Roadmap
 
