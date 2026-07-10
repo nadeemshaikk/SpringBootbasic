@@ -13,28 +13,36 @@ import java.util.List;
 public class Controller {
 
     @Autowired
-    public UserService userService;
+    private UserService userService;
 
+    // Registration API
     @PostMapping
-    public User addUser(@Valid @RequestBody User user){
+    public User addUser(@Valid @RequestBody User user) {
         return userService.saveUser(user);
     }
 
-    @GetMapping()
-    public List<User> getUsers(){
+    // Protected API
+    @GetMapping
+    public List<User> getUsers() {
         return userService.getAllUsers();
     }
+
+    // Protected API
     @GetMapping("/{id}")
-    public User getUser(@PathVariable Long id){
+    public User getUser(@PathVariable Long id) {
         return userService.getUserById(id);
     }
+
+    // Protected API
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable long id,@Valid  @RequestBody User user){
+    public User updateUser(@PathVariable Long id,
+                           @Valid @RequestBody User user) {
         return userService.updateUser(id, user);
     }
 
+    // Protected API
     @DeleteMapping("/{id}")
-    public String deleteUser(@PathVariable Long id){
+    public String deleteUser(@PathVariable Long id) {
         return userService.deleteUser(id);
     }
 }
